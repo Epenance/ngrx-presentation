@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    <input type="checkbox" [checked]="todo.done" (change)="toggleDone(todo)">
+    {{todo.title}}
+    <button class="btn--warning" (click)="deleteTodo(todo)">Delete</button>
+  </li>
+</ul>
+
+<input type="text" #todoInput>
+<button (click)="addTodo(todoInput)">Add todo</button>
